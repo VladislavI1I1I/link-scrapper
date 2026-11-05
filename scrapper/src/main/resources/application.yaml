@@ -1,0 +1,53 @@
+app:
+  github-token: ${GITHUB_TOKEN} # env variable
+  github-base-url: ${GITHUB_BASE_URL:https://api.github.com/repos}
+  client-base-url: ${CLIENT_BASE_URL:http://localhost:8080}
+  message-transport: "kafka"
+
+  stackoverflow:
+    key: ${SO_TOKEN_KEY}
+    access-token: ${SO_ACCESS_TOKEN}
+    url: ${SO_BASE_URL:https://api.stackexchange.com/2.3/questions} # env variable
+  kafka:
+    topics:
+      dlq: "updates_dlq"
+      updater: "updates"
+
+database.type: orm
+spring:
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring.json.add.type.headers: false
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/db
+    username: user
+    password: password
+    driver-class-name: org.postgresql.Driver
+  application:
+    name: Scrapper
+  liquibase:
+    enabled: false
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties.hibernate.format_sql: true
+
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+    show-sql: true
+
+server:
+  port: 8081
+springdoc:
+
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui
+pagination:
+  batch-size: 100
+migrations: run

@@ -1,0 +1,15 @@
+app:
+  message-transport: "http"
+  github-base-url: http://localhost:8089
+
+  stackoverflow:
+    url: http://localhost:8089
+
+spring:
+  liquibase:
+    enabled: false
+  application:
+    name: Scrapper-Test
+
+database.type: sql
+migrations: run

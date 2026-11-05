@@ -1,0 +1,43 @@
+{
+    "properties": [
+        {
+            "name": "app.github-base-url",
+            "type": "java.lang.String",
+            "description": "github base url."
+        },
+        {
+            "name": "app.stackoverflow.url",
+            "type": "java.lang.String",
+            "description": "stackoverflow base url."
+        },
+        {
+            "name": "app.message-transport",
+            "type": "java.lang.String",
+            "description": "update sender type."
+        },
+        {
+            "name": "database.type",
+            "type": "java.lang.String",
+            "description": "database type."
+        },
+        {
+            "name": "migrations",
+            "type": "java.lang.String",
+            "description": "run migrations (if you want to run them type run)."
+        },
+        {
+            "name": "pagination",
+            "type": "java.lang.String",
+            "description": "pagination settings."
+        },
+        {
+            "name": "app.kafka.topics.updater",
+            "type": "java.lang.String",
+            "description": "updater topic name."
+        },
+        {
+            "name": "app.kafka.topics.dlq",
+            "type": "java.lang.String",
+            "description": "dead letter queue topic name."
+        }
+    ] }

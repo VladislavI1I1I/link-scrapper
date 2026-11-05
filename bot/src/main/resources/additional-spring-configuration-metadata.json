@@ -1,0 +1,15 @@
+{
+    "properties":[
+    {
+        "name": "app.kafka.topics.updater",
+        "type": "java.lang.String",
+        "description": "updater topic name."
+    },
+    {
+        "name": "app.kafka.topics.dlq",
+        "type": "java.lang.String",
+        "description": "dead letter queue topic name."
+    }
+]
+
+}
